@@ -1,0 +1,22 @@
+#Serve Alternate Default Index Page
+#DirectoryIndex main.php
+DirectoryIndex promotion.php
+
+#Disable Directory Browsing
+Options All -Indexes
+
+RewriteEngine On 
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+#clean URL
+#for all page :
+#RewriteRule ^([a-zA-Z_-]+)\/?$ index.php?mov=$1 [NC]
+
+#for spesific page :
+#RewriteRule ^promotion\/?$ index.php?mov=promotion [NC]
+
+ErrorDocument 401 /error_page/401.php
+ErrorDocument 403 /error_page/403.php
+ErrorDocument 404 /error_page/404.php
+ErrorDocument 500 /error_page/500.php

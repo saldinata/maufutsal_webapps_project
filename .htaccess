@@ -1,0 +1,57 @@
+#Serve Alternate Default Index Page
+#DirectoryIndex main.php
+DirectoryIndex index.php
+
+#Disable Directory Browsing
+Options All -Indexes
+
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.php -f [NC]
+RewriteRule ^(.*)$ $1.php [L,QSA]
+RewriteCond %{REQUEST_FILENAME}.htm -f [NC]
+RewriteRule ^(.*)$ $1.htm [L,QSA]
+RewriteCond %{REQUEST_FILENAME}.html -f [NC]
+RewriteRule ^(.*)$ $1.html [L,QSA]
+
+#clean URL
+#for all page :
+#RewriteRule ^([a-zA-Z_-]+)\/?$ index.php?mov=$1 [NC]
+
+#for spesific page :
+RewriteRule ^promotion\/?$ index.php?mov=promotion [NC]
+RewriteRule ^promotion_detail\/?$ index.php?mov=promotion_detail [NC]
+RewriteRule ^slamevent\/?$ index.php?mov=slamevent [NC]
+RewriteRule ^competition\/?$ index.php?mov=competition [NC]
+RewriteRule ^panduan\/?$ index.php?mov=panduan [NC]
+RewriteRule ^faq\/?$ index.php?mov=faq [NC]
+RewriteRule ^privacy\/?$ index.php?mov=privacy [NC]
+RewriteRule ^reservation\/?$ index.php?mov=reservation [NC]
+RewriteRule ^reservprocess\/?$ index.php?mov=reservprocess [NC]
+RewriteRule ^reservconfirm\/?$ index.php?mov=reservconfirm [NC]
+RewriteRule ^reservprocesspayment\/?$ index.php?mov=reservprocesspayment [NC]
+RewriteRule ^dashboard\/?$ index.php?mov=dashboard [NC]
+RewriteRule ^slameventinfo\/?$ index.php?mov=slameventinfo [NC]
+RewriteRule ^dashreservconfirm\/?$ index.php?mov=dashreservconfirm [NC]
+RewriteRule ^dashcompinfo\/?$ index.php?mov=dashcompinfo [NC]
+RewriteRule ^dashcompinfosche\/?$ index.php?mov=dashcompinfosche [NC]
+RewriteRule ^dashcompinfoscor\/?$ index.php?mov=dashcompinfoscor [NC]
+RewriteRule ^dashslamevent\/?$ index.php?mov=dashslamevent [NC]
+RewriteRule ^dashhistory\/?$ index.php?mov=dashhistory [NC]
+RewriteRule ^about\/?$ index.php?mov=about [NC]
+RewriteRule ^privacy\/?$ index.php?mov=privacy [NC]
+RewriteRule ^userguide\/?$ index.php?mov=userguide [NC]
+RewriteRule ^changepass\/?$ index.php?mov=changepass [NC]
+RewriteRule ^career\/?$ index.php?mov=career [NC]
+RewriteRule ^partnership\/?$ index.php?mov=partnership [NC]
+RewriteRule ^courtref\/?$ index.php?mov=courtref [NC]
+
+<Files ~ "-nocache\.jpg">
+   Header set Cache-control "no-cache"
+</Files>
+
+ErrorDocument 401 /error_page/401.php
+ErrorDocument 403 /error_page/403.php
+ErrorDocument 404 /error_page/404.php
+ErrorDocument 500 /error_page/500.php

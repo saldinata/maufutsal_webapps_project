@@ -1,0 +1,16 @@
+#Serve Alternate Default Index Page
+#DirectoryIndex main.php
+DirectoryIndex aktivasi.php
+
+#Disable Directory Browsing
+Options All -Indexes
+
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.php -f [NC]
+RewriteRule ^(.*)$ $1.php [L,QSA]
+RewriteCond %{REQUEST_FILENAME}.htm -f [NC]
+RewriteRule ^(.*)$ $1.htm [L,QSA]
+RewriteCond %{REQUEST_FILENAME}.html -f [NC]
+RewriteRule ^(.*)$ $1.html [L,QSA]

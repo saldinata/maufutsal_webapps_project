@@ -1,0 +1,16 @@
+#Serve Alternate Default Index Page
+DirectoryIndex dev.php
+
+#Disable Directory Browsing
+Options All -Indexes
+
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+#clean URL
+#for all page :
+#RewriteRule ^([a-zA-Z_-]+)\/?$ index.php?mov=$1 [NC]
+
+#for spesific page :
+#--- EMPTY ---

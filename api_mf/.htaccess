@@ -1,0 +1,22 @@
+#Serve Alternate Default Index Page
+#DirectoryIndex main.php
+DirectoryIndex development.php
+
+#Disable Directory Browsing
+Options All -Indexes
+
+RewriteEngine On 
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+#clean URL
+#for all page :
+#RewriteRule ^([a-zA-Z_-]+)\/?$ index.php?mov=$1 [NC]
+
+#for spesific page :
+#--- EMPTY ---
+
+#ErrorDocument 401 /maufutsal_website/error_page/401.php
+#ErrorDocument 403 /maufutsal_website/error_page/403.php
+#ErrorDocument 404 /maufutsal_website/error_page/404.php
+#ErrorDocument 500 /maufutsal_website/error_page/500.php
