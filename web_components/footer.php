@@ -39,11 +39,10 @@
 
                         foreach ($result_data as $data)
                         {
-
-                            echo "<li><p><i class=\"fa fa-building-o\"></i> $data['perusahaan']</p></li>";
-                            echo "<li><p><i class=\"fa fa-map-marker\"></i> $data['alamat']</p></li>";
-                            echo "<li><p><i class=\"fa fa-phone\"></i> $data['no_telp']</p></li>";
-                            echo "<li><p><i class=\"fa fa-envelope\"></i> <a href=\"#\">$data['email']</a></p></li>";
+                            echo "<li><p><i class=\"fa fa-building-o\"></i>".$data['perusahaan']."</p></li>";
+                            echo "<li><p><i class=\"fa fa-map-marker\"></i>".$data['alamat']."</p></li>";
+                            echo "<li><p><i class=\"fa fa-phone\"></i>".$data['no_telp']."</p></li>";
+                            echo "<li><p><i class=\"fa fa-envelope\"></i> <a href=\"#\">".$data['email']."</a></p></li>";
                         }
                         ?>
                     </ul>
